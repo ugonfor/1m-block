@@ -11,13 +11,22 @@ sudo apt-get install sqlite3 libsqlite3-dev
 ### Use
 ```shell
 syntax : 1m-block <site list file>
-sample : 1m-block top-1m.txt
+sample : 1m-block top-1m.csv
 ```
 
 ## Description
 * `<site list file>` is host name set which we target to ban
 * Should run this as root user
 * execute `./start.sh` before run this
+```shell
+sudo iptables -F
+sudo iptables -A OUTPUT -j NFQUEUE --queue-num 0
+sudo iptables -A INPUT -j NFQUEUE --queue-num 0
+```
 * execute `./stop.sh` after run this
+```shell
+sudo iptables -F
+```
 
 ## code
+* I use sqlite3 to search url
