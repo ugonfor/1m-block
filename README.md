@@ -11,7 +11,7 @@ sudo apt-get install sqlite3 libsqlite3-dev
 ### Use
 ```shell
 syntax : 1m-block <site list file>
-sample : 1m-block top-1m.csv
+sample : 1m-block top-1m.db
 ```
 
 ## Description
@@ -30,3 +30,6 @@ sudo iptables -F
 
 ## code
 * I use sqlite3 to search url
+* if you want to make new database, you should use the .csv file as input.
+* the other case, you should use .db file.
+
