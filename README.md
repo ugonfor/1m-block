@@ -33,3 +33,22 @@ sudo iptables -F
 * if you want to make new database, you should use the .csv file as input.
 * the other case, you should use .db file.
 
+## Database
+
+```shell
+ugonfor@ubuntu:~/Desktop/1m-block$ sqlite3 ./top-1m.db 
+SQLite version 3.31.1 2020-01-27 19:55:54
+Enter ".help" for usage hints.
+sqlite> select * from URLS where id < 10;
+1|google.com
+2|youtube.com
+3|tmall.com
+4|baidu.com
+5|qq.com
+6|sohu.com
+7|facebook.com
+8|taobao.com
+9|360.cn
+sqlite> .schema
+CREATE TABLE URLS(Id INT, Name TEXT);
+```
